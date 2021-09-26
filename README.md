@@ -4,8 +4,11 @@ A C++ implementation of SPIN model for extracting semantic orientations for Japa
 To implement this program, I referred the following paper:
 
 > Extracting Semantic Orientations of Words using Spin Model
+>
 > Hiroya Takamura, Takashi Inui and Manabu Okumura
+>
 > ACL 2005
+>
 > https://aclanthology.org/P05-1017.pdf
 
 ## Reqruirements
@@ -16,6 +19,7 @@ To implement this program, I referred the following paper:
 ## Install
 ```
 mkdir build
+cd build
 cmake -DCMAKE_INSTALL_PREFIX=/path/to/install -DMECAB_PREFIX=`mecab-config --prefix` ..
 make
 make install

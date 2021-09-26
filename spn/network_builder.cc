@@ -186,7 +186,7 @@ void LexiconNetworkBuilder::train(
       diff_sum += diff;
 
       spin_[i] = new_spin;
-      data.push_back(std::make_pair(spin_[i], wi));
+      data[i] = std::make_pair(spin_[i], wi);
     }
     sort(data.begin(), data.end());
 //    for (auto x : data) {
@@ -195,13 +195,14 @@ void LexiconNetworkBuilder::train(
 //      }
 //    }
     final_data = data;
-    std::cerr << "epoch: " << epoch << "/" << max_epoch << " " << diff_sum / dictionary_.size() << std::endl;
+    std::cerr << "epoch:" << epoch << "/" << max_epoch << " " << diff_sum / dictionary_.size() << std::endl;
   }
 
   std::ofstream ofs(out_file);
   for (auto x : final_data) {
     ofs << x.first << " " << x.second << std::endl;
   }
+  delete spin_;
 }
 
   
